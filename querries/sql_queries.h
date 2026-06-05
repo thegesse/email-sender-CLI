@@ -3,5 +3,6 @@
 
 #include <libpq-fe.h>
 
-PGresult *get_all_emails(PGconn *conn, String query);
+void get_all_emails();
+
 #endif
