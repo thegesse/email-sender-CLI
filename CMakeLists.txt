@@ -6,5 +6,7 @@ set(CMAKE_C_STANDARD 23)
 add_executable(email_sender_CLI main.c
         database-connection/connection.c
         database-connection/connection.h
-        querries/sql_queries.c
-        querries/sql_queries.h)
+        queries/sql_queries.c
+        queries/sql_queries.h
+        email/email_sender.h
+        email/email_sender.c)
