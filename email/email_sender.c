@@ -9,14 +9,17 @@ Email compose_email(void) {
     char line[1024];
 
     printf("Subject: ");
+    fflush(stdout);  // Force prompt to appear immediately
     fgets(email.subject, sizeof(email.subject), stdin);
     email.subject[strcspn(email.subject, "\n")] = 0;
 
     printf("From (email): ");
+    fflush(stdout);
     fgets(email.from, sizeof(email.from), stdin);
     email.from[strcspn(email.from, "\n")] = 0;
 
     printf("Body: ");
+    fflush(stdout);
     while (fgets(line, sizeof(line), stdin)) {
         if (strcmp(line, "\n") == 0) break;
         if (strlen(email.body) + strlen(line) < sizeof(email.body) - 1) {
