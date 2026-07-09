@@ -10,7 +10,7 @@ void get_all_emails() {
         PQfinish(conn);
         return; 
     }
-
+    //Change query to fit table
     PGresult *res = PQexec(conn, "SELECT email FROM people");
     if (PQresultStatus(res) != PGRES_TUPLES_OK) {
         fprintf(stderr, "Query failed: %s\n", PQerrorMessage(conn));
